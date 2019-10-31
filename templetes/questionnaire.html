@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+</head>
+<body>
+    <p>{{question}}</p>
+    <form action="/questionnaire" method="get">
+        <input type="hidden" name="count" value="{{count}}">
+        {% for choice in ans %}
+            <input type="radio" name="op" id="{{forloop.counter}}" value="{{choice.title}}">{{choice.title}}<br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
